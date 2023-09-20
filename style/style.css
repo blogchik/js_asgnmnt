@@ -1,0 +1,360 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root
+{
+    --clr-primary: #ae00ff;
+    --clr-light: #f1f1f1;
+    --clr-dark: #000;
+    --clr-wrong: #e62b2b;
+    --clr-correct: #11ec6c;
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+    line-height: calc(1em + 0.5rem);
+}
+
+body
+{
+    font-family: 'Montserrat', sans-serif;
+    background-image: url("../images/bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+header
+{
+    display: none;
+    position: absolute;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: max-content;
+    background-color: #ae00ff24;
+}
+
+header.shown
+{
+    display: flex;
+}
+
+header .progress-bar
+{
+    display: block;
+    position: relative;
+    height: 20px;
+    padding: 0;
+    margin: 0;
+    background-color: var(--clr-primary);
+    transition: 0.3s all ease-in-out;
+}
+
+main
+{
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin: 0;
+    width: 100vw;
+    height: calc(100vh - 80px);
+}
+
+main section
+{
+    display: none;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: auto;
+    padding: 40px;
+    margin: 0;
+    gap: 20px;
+    border-radius: 16px;
+    background-color: var(--clr-light);
+    color: var(--clr-dark);
+    box-shadow: 5px 5px 20px #0000002a;
+    overflow: hidden;
+    transition: 0.3s all ease-in-out;
+}
+
+main section.shown
+{
+    display: flex;
+}
+
+main section .counter
+{
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--clr-primary);
+    opacity: 0.8;
+}
+
+main section .question
+{
+    font-size: 24px;
+    font-weight: 500;
+    font-style: normal;
+    color: var(--clr-dark);
+    text-align: center;
+}
+
+main section .options
+{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    height: auto;
+}
+
+main section .answers
+{
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--clr-primary);
+    opacity: 0.8;
+}
+
+main section .answer
+{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    gap: 14px;
+    font-size: 22px;
+    font-weight: 400;
+    font-style: normal;
+    background-color: var(--clr-light);
+    color: var(--clr-dark);
+    border: 1px solid var(--clr-dark);
+    border-radius: 12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 18px;
+    padding-right: 18px;
+    width: 100%;
+    height: auto;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s all ease-in-out;
+}
+
+main section .answer i
+{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s all ease-in-out;
+}
+
+main section .answer:hover, main section .answer:active, main section .answer:focus
+{
+    background-color: var(--clr-primary);
+    color: var(--clr-light);
+    border-color: var(--clr-primary);
+}
+
+main section .answer:hover  i
+{
+    color: var(--clr-light);
+    transform: translateX(6px);
+}
+
+main section .answer:active  i
+{
+    color: var(--clr-light);
+    transform: translateX(6px);
+}
+
+main section .answer:focus  i
+{
+    color: var(--clr-light);
+    transform: translateX(6px);
+}
+
+main section .answer.answered
+{
+    background-color: var(--clr-primary);
+    color: var(--clr-light);
+    border-color: var(--clr-primary);
+    cursor: default;
+}
+
+main section .answer.not-answered
+{
+    cursor: default;
+}
+
+main section .response
+{
+    display: none;
+    font-size: 22px;
+    font-weight: 600;
+    font-style: normal;
+}
+
+main section .response.wrong
+{
+    display: block;
+    color: var(--clr-wrong);
+}
+
+main section .response.correct
+{
+    display: block;
+    color: var(--clr-correct);
+}
+
+main section .timer-progress
+{
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    height: 10px;
+    background-color: var(--clr-primary);
+    transition: 0.3s all ease-in-out;
+}
+
+footer
+{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: max-content;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--clr-light);
+    color: var(--clr-dark);
+}
+
+footer .sign
+{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--clr-dark);
+}
+
+footer .sign i
+{
+    color: var(--clr-wrong);
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    margin-left: 6px;
+}
+
+#results-block .result_text
+{
+    font-size: 32px;
+    font-weight: 600;
+    font-style: normal;
+    color: var(--clr-dark);
+}
+
+#results-block .result_score
+{
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--clr-dark);
+}
+
+#results-block .restart
+{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 22px;
+    font-weight: 500;
+    font-style: normal;
+    color: var(--clr-light);
+    background-color: var(--clr-primary);
+    text-decoration: none;
+    text-overflow: ellipsis;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 18px;
+    padding-right: 18px;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    outline: none;
+    transition: 0.3s all ease-in-out;
+}
+
+#results-block .restart i
+{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s all ease-in-out;
+}
+
+#results-block .restart:hover, #results-block .restart:active, #results-block .restart:focus
+{
+    background-color: var(--clr-light);
+    color: var(--clr-primary);
+    border-color: var(--clr-primary);
+}
+
+#results-block .restart:hover  i
+{
+    transform: rotate(360deg);
+}
+
+#results-block .restart:active  i
+{
+    transform: rotate(360deg);
+}
+
+#results-block .restart:focus  i
+{
+    transform: rotate(360deg);
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Country Capital Quiz</title>
+
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="./style/style.css">
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+
+</head>
+<body>
+
+<header id="header">
+
+    <div class="progress-bar" id="progress-bar" style="width: 0%;"></div>
+
+</header>
+
+<main>
+
+    <section id="questions-block" class="shown">
+
+        <p class="counter" id="counter">Question</p>
+
+        <p class="question" id="question">Lorem ipsum dolor sit amet consectetur?</p>
+
+    </section>
+
+    <section id="answers-block" class="shown">
+
+        <div class="timer-progress" id="timer-progress" style="width: 0%;"></div>
+
+        <p class="answers" id="answers">Answers:</p>
+
+        <p class="response" id="response">Correct!</p>
+        
+        <div id="options" class="options">
+        
+        </div>
+
+    </section>
+
+    <section id="results-block">
+
+        <p class="counter" id="counter">Results:</p>
+        
+        <p class="result_text" id="result_text">Lorem, ipsum dolor.</p>
+
+        <p class="result_score" id="result_score">Score: 10</p>
+
+        <a href="./" class="restart"><i class="fi fi-sr-refresh"></i> Restart</a>
+
+    </section>
+
+</main>
+
+<footer>
+
+    <p class="sign">© 2023 Jabborov Abduroziq. Made with <i class="fi fi-sr-heart"></i></p>
+
+</footer>
+
+<script src="./js/script.js"></script>
+
+</body>
+</html>
